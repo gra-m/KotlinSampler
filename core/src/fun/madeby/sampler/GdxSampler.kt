@@ -9,6 +9,9 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch
 
 
 class GdxSampler : ApplicationAdapter() {
+    // batch cannot be created until framework is up and running, hence use of Kotlin's late init initializer
+    // without this (libGDX in Java) is capable of having batch initialised in time not to get the UnsatisfiedLinkError
+    // in Kotlin, this cannot be initialized in time.
     var batch: SpriteBatch = SpriteBatch()
     var img: Texture = Texture("badlogic.jpg")
 
