@@ -4,11 +4,23 @@ package `fun`.madeby.sampler
 import com.badlogic.gdx.Application
 import com.badlogic.gdx.ApplicationListener
 import com.badlogic.gdx.Gdx
-import com.badlogic.gdx.utils.Logger
+import `fun`.madeby.sampler.utils.logger
 
 
 class ApplicationListenerSampler : ApplicationListener {
-    val LOG = Logger(ApplicationListenerSampler::class.java.simpleName, Logger.DEBUG)
+
+    // Static method, available app wide if private is removed
+    companion object {
+        // @Jvm used to alter kotlin to apply Java standards, in below example Static Final
+        @JvmStatic
+        //private val LOG = Logger(ApplicationListenerSampler::class.java.simpleName, Logger.DEBUG)
+        // THE above is long-winded for the creation of a gdx logger wherever you need it see utils generic function 'logger
+        // private val LOG = logger(ApplicationListenerSampler::class.java)
+        // finally using inline and reified:
+        private val LOG = logger<ApplicationListenerSampler>()
+
+    }
+
     private var interruptRender = true
     override fun create() {
         // initialize game and load resources
