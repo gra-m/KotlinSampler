@@ -14,10 +14,10 @@ import com.badlogic.gdx.utils.viewport.Viewport
 import `fun`.madeby.sampler.utils.logger
 
 
-class InputPollingSample : ApplicationAdapter() {
+class _01_InputPollingSample : ApplicationAdapter() {
     companion object {
         @JvmStatic
-        private val LOG = logger<InputPollingSample>()
+        private val LOG = logger<_01_InputPollingSample>()
     }
 
     lateinit var camera: OrthographicCamera

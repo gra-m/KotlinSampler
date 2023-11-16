@@ -8,7 +8,7 @@ fun main() {
     val config = Lwjgl3ApplicationConfiguration()
     config.setWindowSizeLimits(1080, 720, 1080, 720)
 
-    Lwjgl3Application(InputPollingSample(), config)
+    Lwjgl3Application(_01_InputPollingSample(), config)
 }
 
 
