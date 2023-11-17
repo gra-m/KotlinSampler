@@ -1,5 +1,5 @@
 //Created by Graham Duthie on 15/11/2023 12:06 -1h
-package `fun`.madeby.sampler
+package funz.madeby.sampler
 
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application

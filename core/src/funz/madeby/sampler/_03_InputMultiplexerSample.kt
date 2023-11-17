@@ -1,7 +1,7 @@
-package `fun`.madeby.sampler
+package funz.madeby.sampler
 
 import com.badlogic.gdx.*
-import `fun`.madeby.sampler.utils.logger
+import funz.madeby.sampler.utils.logger
 
 class _03_InputMultiplexerSample : ApplicationAdapter() {
     companion object {

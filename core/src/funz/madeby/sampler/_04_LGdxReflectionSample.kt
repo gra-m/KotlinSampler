@@ -1,10 +1,10 @@
-package `fun`.madeby.sampler
+package funz.madeby.sampler
 
 import com.badlogic.gdx.Application
 import com.badlogic.gdx.ApplicationAdapter
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.utils.reflect.ClassReflection
-import `fun`.madeby.sampler.utils.logger
+import funz.madeby.sampler.utils.logger
 
 class _04_LGdxReflectionSample : ApplicationAdapter() {
     companion object {

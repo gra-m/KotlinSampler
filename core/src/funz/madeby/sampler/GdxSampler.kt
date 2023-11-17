@@ -1,10 +1,10 @@
 //Created by Graham Duthie on 15/11/2023 12:11 -1h
-package `fun`.madeby.sampler
+package funz.madeby.sampler
 
 import com.badlogic.gdx.ApplicationAdapter
 import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
-import `fun`.madeby.sampler.utils.clearScreen
+import funz.madeby.sampler.utils.clearScreen
 
 
 class GdxSampler : ApplicationAdapter() {

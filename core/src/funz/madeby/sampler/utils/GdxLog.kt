@@ -1,5 +1,5 @@
 //Created by Graham Duthie on 15/11/2023 16:57 -1h
-package `fun`.madeby.sampler.utils
+package funz.madeby.sampler.utils
 
 import com.badlogic.gdx.utils.Logger
 

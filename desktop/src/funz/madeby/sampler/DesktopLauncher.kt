@@ -1,11 +1,12 @@
 //Created by Graham Duthie on 15/11/2023 12:06 -1h
-package `fun`.madeby.sampler
+package funz.madeby.sampler
 
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration
 
 fun main() {
-    Lwjgl3Application(ApplicationListenerSampler(), Lwjgl3ApplicationConfiguration())
+
+    Lwjgl3Application(GdxSampler(), Lwjgl3ApplicationConfiguration())
 }
 
 

@@ -1,13 +1,13 @@
 //Created by Graham Duthie on 15/11/2023 12:11 -1h
-package `fun`.madeby.sampler
+package funz.madeby.sampler
 
 import com.badlogic.gdx.Application
 import com.badlogic.gdx.ApplicationListener
 import com.badlogic.gdx.Gdx
-import `fun`.madeby.sampler.utils.logger
+import funz.madeby.sampler.utils.logger
 
 
-class ApplicationListenerSampler : ApplicationListener {
+class ApplicationListenerSample : ApplicationListener {
 
     // Static method, available app wide if private is removed
     companion object {
@@ -17,7 +17,7 @@ class ApplicationListenerSampler : ApplicationListener {
         // THE above is long-winded for the creation of a gdx logger wherever you need it see utils generic function 'logger
         // private val LOG = logger(ApplicationListenerSampler::class.java)
         // finally using inline and reified:
-        private val LOG = logger<ApplicationListenerSampler>()
+        private val LOG = logger<ApplicationListenerSample>()
 
     }
 

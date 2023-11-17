@@ -1,5 +1,5 @@
 //Created by Graham Duthie on 15/11/2023 12:11 -1h
-package `fun`.madeby.sampler
+package funz.madeby.sampler
 
 import com.badlogic.gdx.Application
 import com.badlogic.gdx.ApplicationAdapter
@@ -10,9 +10,9 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.utils.viewport.FitViewport
 import com.badlogic.gdx.utils.viewport.Viewport
-import `fun`.madeby.sampler.utils.clearScreen
-import `fun`.madeby.sampler.utils.logger
-import `fun`.madeby.sampler.utils.toInternalFile
+import funz.madeby.sampler.utils.clearScreen
+import funz.madeby.sampler.utils.logger
+import funz.madeby.sampler.utils.toInternalFile
 
 // Import tagging
 //import com.badlogic.gdx.utils.Array as GdxArray
