@@ -12,14 +12,15 @@ class GdxSampleLauncher {
 
     init {
         config.setWindowSizeLimits(1080, 720, 1080, 720)
-        var count = 0;
+        var count = 0
 
         while(running) {
             var welcome = if(count == 0) "Which sample do you want to run?" else "Want to run another sample?"
             println(welcome)
             println("\n1.InputPolling\n2.InputListening\n3.InputMultiplexer[press some keys, play with true/false" +
-                    "\n4.LGdxReflectionSample[MethodsAndFieldsOfActiveClass\n5.ApplicationListenerSample[CallOrder]\n" +
-                    "6.ModuleInfoSample[The Interfaces used by LibGdx]\n7.GdxSampler\n0.exit")
+                    "\n4.LGdxReflectionSample[MethodsAndFieldsOfActiveClass\n5.OrthographicCameraSample" +
+                    "\n6.ApplicationListenerSample[CallOrder]\n7.ModuleInfoSample[The Interfaces used by LibGdx]" +
+                    "\n8.GdxSampler\n0.exit")
             count++
             var choice:Int =  readLine()!!.toInt()
 
@@ -28,19 +29,20 @@ class GdxSampleLauncher {
                 2 -> runSample("funz.madeby.sampler._02_InputListeningSample")
                 3 -> runSample("funz.madeby.sampler._03_InputMultiplexerSample")
                 4 -> runSample("funz.madeby.sampler._04_LGdxReflectionSample")
-                5 -> runSample("funz.madeby.sampler.ApplicationListenerSample")
-                6 -> runSample("funz.madeby.sampler.ModuleInfoSample")
-                7 -> runSample("funz.madeby.sampler.GdxSampler")
+                5 -> runSample("funz.madeby.sampler._05_OrthographicCameraSample")
+                6 -> runSample("funz.madeby.sampler.ApplicationListenerSample")
+                7 -> runSample("funz.madeby.sampler.ModuleInfoSample")
+                8 -> runSample("funz.madeby.sampler.GdxSampler")
                 0 -> {running = false
                 println("exiting")
                 }
                 else -> {
-                    println("choice is invalid")
+                       println("choice is invalid")
+                    }
                 }
 
             }
         }
-    }
 
     private fun runSample(sampleClassPath: String) {
         println("launching sample: ${sampleClassPath.substringAfterLast('.')}")

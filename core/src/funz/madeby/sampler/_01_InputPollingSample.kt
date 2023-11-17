@@ -69,6 +69,7 @@ class _01_InputPollingSample : ApplicationAdapter() {
     }
 
     override fun dispose() {
+        LOG.debug("dispose()")
         batch.dispose()
         font.dispose()
     }
