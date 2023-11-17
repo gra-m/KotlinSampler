@@ -39,6 +39,8 @@ class _05_OrthographicCameraSample : ApplicationAdapter() {
         LOG.debug("create()")
 
         camera = OrthographicCamera()
+        // This set up is easier for menu overlays:
+        camera.setToOrtho(true)
         viewport = FitViewport(WORLD_WIDTH, WORLD_HEIGHT, camera)
         batch = SpriteBatch()
         texture = Texture("raw/level-bg.png".toInternalFile())
@@ -72,8 +74,8 @@ class _05_OrthographicCameraSample : ApplicationAdapter() {
             Input.Keys.RIGHT.isKeyPressed() -> camera.position.x += CAMERA_SPEED * deltaTime
             Input.Keys.UP.isKeyPressed() -> camera.position.y += CAMERA_SPEED * deltaTime
             Input.Keys.DOWN.isKeyPressed() -> camera.position.y -= CAMERA_SPEED * deltaTime
-            Input.Keys.PAGE_UP.isKeyPressed() -> camera.zoom -= CAMERA_SPEED * deltaTime
-            Input.Keys.PAGE_DOWN.isKeyPressed() -> camera.zoom += CAMERA_SPEED * deltaTime
+            Input.Keys.PAGE_UP.isKeyPressed() -> camera.zoom -= CAMERA_ZOOM_SPEED * deltaTime
+            Input.Keys.PAGE_DOWN.isKeyPressed() -> camera.zoom += CAMERA_ZOOM_SPEED * deltaTime
             Input.Keys.ENTER.isKeyPressed() -> {
                 LOG.debug("position = ${camera.position}\n zoom= ${camera.zoom}")
             }
@@ -83,6 +85,7 @@ class _05_OrthographicCameraSample : ApplicationAdapter() {
                 LOG.debug("no keys pressed -> this output is limited to 1/60th")
         }
         }
+        camera.update()
     }
 
     private fun draw() {
