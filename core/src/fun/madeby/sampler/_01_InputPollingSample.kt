@@ -5,13 +5,14 @@ import com.badlogic.gdx.Application
 import com.badlogic.gdx.ApplicationAdapter
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.Input
-import com.badlogic.gdx.graphics.GL20
 import com.badlogic.gdx.graphics.OrthographicCamera
 import com.badlogic.gdx.graphics.g2d.BitmapFont
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.utils.viewport.FitViewport
 import com.badlogic.gdx.utils.viewport.Viewport
+import `fun`.madeby.sampler.utils.clearScreen
 import `fun`.madeby.sampler.utils.logger
+import `fun`.madeby.sampler.utils.toInternalFile
 
 
 class _01_InputPollingSample : ApplicationAdapter() {
@@ -31,7 +32,8 @@ class _01_InputPollingSample : ApplicationAdapter() {
         camera = OrthographicCamera()
         viewport = FitViewport(1080f, 720f, camera)
         batch = SpriteBatch()
-        font = BitmapFont(Gdx.files.internal("fonts/oswald-32.fnt"))
+        //font = BitmapFont(Gdx.files.internal("fonts/oswald-32.fnt"))
+        font = BitmapFont("fonts/oswald-32.fnt".toInternalFile())
 
     }
 
@@ -41,8 +43,7 @@ class _01_InputPollingSample : ApplicationAdapter() {
     }
 
     override fun render() {
-        Gdx.gl.glClearColor(0f, 0f, 0f, 1f)
-        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT)
+        clearScreen()
         batch.projectionMatrix = camera.combined
 
         batch.begin()
