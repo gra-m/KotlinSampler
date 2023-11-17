@@ -39,7 +39,7 @@ class _05_OrthographicCameraSample : ApplicationAdapter() {
         LOG.debug("create()")
 
         camera = OrthographicCamera()
-        viewport = FitViewport(1080f, 720f, camera)
+        viewport = FitViewport(WORLD_WIDTH, WORLD_HEIGHT, camera)
         batch = SpriteBatch()
         texture = Texture("raw/level-bg.png".toInternalFile())
 
