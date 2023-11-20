@@ -19,8 +19,8 @@ class GdxSampleLauncher {
             println(welcome)
             println("\n1.InputPolling\n2.InputListening\n3.InputMultiplexer[press some keys, play with true/false" +
                     "\n4.LGdxReflectionSample[MethodsAndFieldsOfActiveClass\n5.OrthographicCameraSample" +
-                    "\n6.ViewportSample\n7.ApplicationListenerSample[CallOrder]" +
-                    "\n8.ModuleInfoSample[The Interfaces used by LibGdx]\n9.GdxSampler\n0.exit")
+                    "\n6.ViewportSample\n7.SpriteBatchSample\n8.ApplicationListenerSample[CallOrder]" +
+                    "\n9.ModuleInfoSample[The Interfaces used by LibGdx]\n10.GdxSampler\n0.exit")
             count++
             var choice:Int =  readLine()!!.toInt()
 
@@ -31,9 +31,10 @@ class GdxSampleLauncher {
                 4 -> runSample("funz.madeby.sampler._04_LGdxReflectionSample")
                 5 -> runSample("funz.madeby.sampler._05_OrthographicCameraSample")
                 6 -> runSample("funz.madeby.sampler._06_ViewportSample")
-                7 -> runSample("funz.madeby.sampler.ApplicationListenerSample")
-                8 -> runSample("funz.madeby.sampler.ModuleInfoSample")
-                9 -> runSample("funz.madeby.sampler.GdxSampler")
+                7 -> runSample("funz.madeby.sampler._07_SpriteBatchSample")
+                8 -> runSample("funz.madeby.sampler.ApplicationListenerSample")
+                9 -> runSample("funz.madeby.sampler.ModuleInfoSample")
+                10 -> runSample("funz.madeby.sampler.GdxSampler")
                 0 -> {running = false
                 println("exiting")
                 }
