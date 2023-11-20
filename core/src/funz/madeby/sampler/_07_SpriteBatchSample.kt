@@ -13,6 +13,7 @@ import com.badlogic.gdx.utils.viewport.Viewport
 import funz.madeby.sampler.utils.clearScreen
 import funz.madeby.sampler.utils.logger
 import funz.madeby.sampler.utils.toInternalFile
+import funz.madeby.sampler.utils.use
 
 
 class _07_SpriteBatchSample : ApplicationAdapter() {
@@ -45,21 +46,20 @@ class _07_SpriteBatchSample : ApplicationAdapter() {
         clearScreen()
         // Tell batch about camera position/rotation and zoom level
         batch.projectionMatrix = camera.combined
+        // batch was rendering with tints without this being set to white here:
         batch.setColor(255f, 255f, 255f, 1f)
 
+        // Calling new HigherOrder function that takes draw as a parameter.
+        batch.use { draw() }
 
-        batch.begin()
-        draw()
-        batch.end()
 
     }
 
     private fun draw() {
         val width = 1f
         val height = 1f
-        val currentColor = batch.color
-
-        LOG.debug(currentColor.toString())
+        val oldColor = batch.color
+        LOG.debug(oldColor.toString())
 
         val newColor = Color.SALMON
 
@@ -99,7 +99,7 @@ class _07_SpriteBatchSample : ApplicationAdapter() {
             false, false
         )
 
-        batch.color =currentColor
+        batch.color = oldColor
 
 
     }
