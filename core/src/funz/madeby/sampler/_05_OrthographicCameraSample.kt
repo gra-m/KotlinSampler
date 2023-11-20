@@ -10,10 +10,7 @@ import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.utils.viewport.FitViewport
 import com.badlogic.gdx.utils.viewport.Viewport
-import funz.madeby.sampler.utils.clearScreen
-import funz.madeby.sampler.utils.isKeyPressed
-import funz.madeby.sampler.utils.logger
-import funz.madeby.sampler.utils.toInternalFile
+import funz.madeby.sampler.utils.*
 
 
 class _05_OrthographicCameraSample : ApplicationAdapter() {
@@ -58,10 +55,8 @@ class _05_OrthographicCameraSample : ApplicationAdapter() {
         // camera position, zoom and rotation obtained by Spritebatch from camera
         batch.projectionMatrix = camera.combined
 
-        batch.begin()
-        draw()
-        batch.end()
 
+        batch.use { draw() }
     }
 
     private fun queryInput() {

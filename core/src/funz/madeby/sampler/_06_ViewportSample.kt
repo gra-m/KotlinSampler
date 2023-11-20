@@ -11,10 +11,7 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.utils.ArrayMap
 import com.badlogic.gdx.utils.viewport.*
-import funz.madeby.sampler.utils.clearScreen
-import funz.madeby.sampler.utils.isKeyPressed
-import funz.madeby.sampler.utils.logger
-import funz.madeby.sampler.utils.toInternalFile
+import funz.madeby.sampler.utils.*
 
 /* Viewports controls the strategy for scaling game world to screen.
 Built in Strategies to handle multiple resolutions.
@@ -98,10 +95,8 @@ class _06_ViewportSample : ApplicationAdapter(), MyInputProcessor {
         //queryInput()
         // camera position, zoom and rotation obtained by Spritebatch from camera
         batch.projectionMatrix = camera.combined
+        batch.use { draw() }
 
-        batch.begin()
-        draw()
-        batch.end()
 
     }
 

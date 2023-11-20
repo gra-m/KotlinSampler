@@ -14,8 +14,9 @@ fun clearScreen(red: Float, green: Float, blue: Float, alpha: Float) {
     Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT)
 }
 
-// In Kotlin it is simple to set up Higer order functions that accept a function as a parameter and carry it out where required
-fun Batch.use(action: () -> Unit) {
+// In Kotlin it is simple to set up Higher order functions that accept a function as a parameter and carry it out where required
+// inline the code below is not duplicated, it is just placed where required when called.
+inline fun Batch.use(action: () -> Unit) {
     begin()
     action()
     end()

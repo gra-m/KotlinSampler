@@ -13,6 +13,7 @@ import com.badlogic.gdx.utils.viewport.Viewport
 import funz.madeby.sampler.utils.clearScreen
 import funz.madeby.sampler.utils.logger
 import funz.madeby.sampler.utils.toInternalFile
+import funz.madeby.sampler.utils.use
 
 // Import tagging
 //import com.badlogic.gdx.utils.Array as GdxArray
@@ -55,10 +56,7 @@ class _02_InputListeningSample : ApplicationAdapter(), InputProcessor {
         clearScreen()
         batch.projectionMatrix = camera.combined
 
-        batch.begin()
-        draw()
-        batch.end()
-
+        batch.use { draw() }
     }
 
     private fun draw() {
