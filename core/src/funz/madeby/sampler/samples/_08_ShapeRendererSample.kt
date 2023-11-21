@@ -47,7 +47,59 @@ class _08_ShapeRendererSample : SampleBase() {
 
         if(drawGrid)
             drawGrid()
+        if(drawCircles)
+            drawCircles()
+        if(drawRectangles)
+            drawRectangles()
+        if(drawPoints)
+            drawPoints()
+    }
 
+    private fun drawPoints() {
+        renderer.color = Color.GRAY
+
+        renderer.begin(ShapeRenderer.ShapeType.Filled)
+
+        renderer.point(3f, 3f, 0f)
+        renderer.color = Color.FIREBRICK
+        renderer.point(4f, 5f, 0f)
+
+        renderer.color = Color.GOLD
+        renderer.point(5f, 7f, 0f)
+        renderer.point(17f, 1f, 0f)
+        renderer.end()
+
+        renderer.begin(ShapeRenderer.ShapeType.Line)
+        renderer.color = Color.FOREST
+        renderer.x(-10f, -5f, 5f)
+        renderer.end()
+    }
+
+    private fun drawRectangles() {
+        renderer.color = Color.GOLD
+
+        renderer.begin(ShapeRenderer.ShapeType.Filled)
+
+        renderer.rect(3f, 3f, 1f, 1f)
+        renderer.color = Color.GOLDENROD
+        renderer.rect(4f, 5f, 1f, 1f)
+        renderer.color = Color.FIREBRICK
+        renderer.rect(5f, 7f, 1f, 1f)
+        renderer.rect(17f, 1f, 1f, 1f)
+        renderer.end()
+    }
+    private fun drawCircles() {
+       renderer.color = Color.GOLD
+
+       renderer.begin(ShapeRenderer.ShapeType.Filled)
+
+        renderer.circle(1f, 1f, 1f, 40)
+        renderer.color = Color.GOLDENROD
+        renderer.circle(2f, 2f, 1f)
+        renderer.color = Color.FIREBRICK
+        renderer.circle(3f, 3f, 1f, 30)
+        renderer.circle(19f, 1f, 1f)
+       renderer.end()
     }
 
     private fun drawGrid() {
@@ -99,7 +151,7 @@ class _08_ShapeRendererSample : SampleBase() {
     }
 
     private fun dontForgetToUpdateViewport(width: Int, height: Int) {
-        // really, you will wonder why nothing is rendering and blame something more complex.. note camera is not centered
+        // really, you will wonder why nothing is rendering and blame something more complex dot. ;) note camera is not centered
         viewport.update(width, height, centerCamera)
     }
 
