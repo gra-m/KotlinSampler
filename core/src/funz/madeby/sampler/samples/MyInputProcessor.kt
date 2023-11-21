@@ -2,7 +2,7 @@
 package funz.madeby.sampler.samples
 
 import com.badlogic.gdx.InputProcessor
-
+@Deprecated("Replaced with the introduction of SampleBase the base class for all Sample examples")
 interface MyInputProcessor: InputProcessor {
 
     override fun keyDown(keycode: Int): Boolean {

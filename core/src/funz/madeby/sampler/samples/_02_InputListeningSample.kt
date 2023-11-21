@@ -2,14 +2,13 @@
 package funz.madeby.sampler.samples
 
 import com.badlogic.gdx.Application
-import com.badlogic.gdx.ApplicationAdapter
 import com.badlogic.gdx.Gdx
-import com.badlogic.gdx.InputProcessor
 import com.badlogic.gdx.graphics.OrthographicCamera
 import com.badlogic.gdx.graphics.g2d.BitmapFont
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.utils.viewport.FitViewport
 import com.badlogic.gdx.utils.viewport.Viewport
+import funz.madeby.sampler.common.SampleBase
 import funz.madeby.sampler.utils.clearScreen
 import funz.madeby.sampler.utils.logger
 import funz.madeby.sampler.utils.toInternalFile
@@ -21,7 +20,7 @@ import funz.madeby.sampler.utils.use
 // type aliasing within actual file or elsewhere for use throughout == put the below in a kotlin file named GdxArray
 typealias GdxArray<T> = com.badlogic.gdx.utils.Array<T>
 
-class _02_InputListeningSample : ApplicationAdapter(), InputProcessor {
+class _02_InputListeningSample : SampleBase() {
     companion object {
         @JvmStatic
         private val LOG = logger<_02_InputListeningSample>()

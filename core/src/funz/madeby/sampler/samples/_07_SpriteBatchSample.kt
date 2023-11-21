@@ -2,7 +2,6 @@
 package funz.madeby.sampler.samples
 
 import com.badlogic.gdx.Application
-import com.badlogic.gdx.ApplicationAdapter
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.graphics.OrthographicCamera
@@ -10,13 +9,14 @@ import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.utils.viewport.FitViewport
 import com.badlogic.gdx.utils.viewport.Viewport
+import funz.madeby.sampler.common.SampleBase
 import funz.madeby.sampler.utils.clearScreen
 import funz.madeby.sampler.utils.logger
 import funz.madeby.sampler.utils.toInternalFile
 import funz.madeby.sampler.utils.use
 
 
-class _07_SpriteBatchSample : ApplicationAdapter() {
+class _07_SpriteBatchSample : SampleBase() {
     companion object {
         @JvmStatic
         private val LOG = logger<_07_SpriteBatchSample>()

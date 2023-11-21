@@ -1,9 +1,13 @@
 package funz.madeby.sampler.samples
 
-import com.badlogic.gdx.*
+import com.badlogic.gdx.Application
+import com.badlogic.gdx.Gdx
+import com.badlogic.gdx.InputAdapter
+import com.badlogic.gdx.InputMultiplexer
+import funz.madeby.sampler.common.SampleBase
 import funz.madeby.sampler.utils.logger
 
-class _03_InputMultiplexerSample : ApplicationAdapter() {
+class _03_InputMultiplexerSample : SampleBase() {
     companion object {
         @JvmStatic
         private val LOG = logger<_03_InputMultiplexerSample>()
