@@ -1,10 +1,9 @@
 //Created by Graham Duthie on 17/11/2023 11:12
 package funz.madeby.sampler
 
-import com.badlogic.gdx.ApplicationListener
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration
-import com.badlogic.gdx.utils.reflect.ClassReflection
+import funz.madeby.sampler.common.SampleFactory
 
 class GdxSampleLauncher {
     private var running = true
@@ -22,19 +21,19 @@ class GdxSampleLauncher {
                     "\n6.ViewportSample\n7.SpriteBatchSample\n8.ApplicationListenerSample[CallOrder]" +
                     "\n9.ModuleInfoSample[The Interfaces used by LibGdx]\n10.GdxSampler\n0.exit")
             count++
-            var choice:Int =  readLine()!!.toInt()
+            val choice:Int =  readLine()!!.toInt()
 
             when(choice) {
-                1 -> runSample("funz.madeby.sampler.samples._01_InputPollingSample")
-                2 -> runSample("funz.madeby.sampler.samples._02_InputListeningSample")
-                3 -> runSample("funz.madeby.sampler.samples._03_InputMultiplexerSample")
-                4 -> runSample("funz.madeby.sampler.samples._04_LGdxReflectionSample")
-                5 -> runSample("funz.madeby.sampler.samples._05_OrthographicCameraSample")
-                6 -> runSample("funz.madeby.sampler.samples._06_ViewportSample")
-                7 -> runSample("funz.madeby.sampler.samples._07_SpriteBatchSample")
-                8 -> runSample("funz.madeby.sampler.samples.ApplicationListenerSample")
-                9 -> runSample("funz.madeby.sampler.samples.ModuleInfoSample")
-                10 -> runSample("funz.madeby.sampler.samples.GdxGeneratedSample")
+                1 -> runSample("_01_InputPollingSample")
+                2 -> runSample("_02_InputListeningSample")
+                3 -> runSample("_03_InputMultiplexerSample")
+                4 -> runSample("_04_LGdxReflectionSample")
+                5 -> runSample("_05_OrthographicCameraSample")
+                6 -> runSample("_06_ViewportSample")
+                7 -> runSample("_07_SpriteBatchSample")
+                8 -> runSample("ApplicationListenerSample")
+                9 -> runSample("ModuleInfoSample")
+                10 -> runSample("GdxGeneratedSample")
                 0 -> {running = false
                 println("exiting")
                 }
@@ -42,20 +41,12 @@ class GdxSampleLauncher {
                        println("choice is invalid")
                     }
                 }
-
             }
         }
 
-    private fun runSample(sampleClassPath: String) {
-        println("launching sample: ${sampleClassPath.substringAfterLast('.')}")
-
-        val retrievedClassObject = ClassReflection.forName(sampleClassPath)
-        // create new instance
-        val reflectedApplicationListener = ClassReflection.newInstance(retrievedClassObject) as ApplicationListener
-
-        Lwjgl3Application(reflectedApplicationListener, config)
-
-
+    private fun runSample(sampleBaseSimpleName: String) {
+        println("launching sample: $sampleBaseSimpleName")
+        Lwjgl3Application(SampleFactory.newSample(sampleBaseSimpleName), config)
     }
 }
 
