@@ -1,5 +1,5 @@
 //Created by Graham Duthie on 15/11/2023 12:11 -1h
-package funz.madeby.sampler
+package funz.madeby.sampler.samples
 
 import com.badlogic.gdx.Application
 import com.badlogic.gdx.ApplicationListener

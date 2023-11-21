@@ -1,5 +1,5 @@
 //Created by Graham Duthie on 17/11/2023 20:42
-package funz.madeby.sampler
+package funz.madeby.sampler.samples
 
 import com.badlogic.gdx.InputProcessor
 

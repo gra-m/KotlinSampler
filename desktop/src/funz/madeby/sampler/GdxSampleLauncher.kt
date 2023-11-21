@@ -25,16 +25,16 @@ class GdxSampleLauncher {
             var choice:Int =  readLine()!!.toInt()
 
             when(choice) {
-                1 -> runSample("funz.madeby.sampler._01_InputPollingSample")
-                2 -> runSample("funz.madeby.sampler._02_InputListeningSample")
-                3 -> runSample("funz.madeby.sampler._03_InputMultiplexerSample")
-                4 -> runSample("funz.madeby.sampler._04_LGdxReflectionSample")
-                5 -> runSample("funz.madeby.sampler._05_OrthographicCameraSample")
-                6 -> runSample("funz.madeby.sampler._06_ViewportSample")
-                7 -> runSample("funz.madeby.sampler._07_SpriteBatchSample")
-                8 -> runSample("funz.madeby.sampler.ApplicationListenerSample")
-                9 -> runSample("funz.madeby.sampler.ModuleInfoSample")
-                10 -> runSample("funz.madeby.sampler.GdxSampler")
+                1 -> runSample("funz.madeby.sampler.samples._01_InputPollingSample")
+                2 -> runSample("funz.madeby.sampler.samples._02_InputListeningSample")
+                3 -> runSample("funz.madeby.sampler.samples._03_InputMultiplexerSample")
+                4 -> runSample("funz.madeby.sampler.samples._04_LGdxReflectionSample")
+                5 -> runSample("funz.madeby.sampler.samples._05_OrthographicCameraSample")
+                6 -> runSample("funz.madeby.sampler.samples._06_ViewportSample")
+                7 -> runSample("funz.madeby.sampler.samples._07_SpriteBatchSample")
+                8 -> runSample("funz.madeby.sampler.samples.ApplicationListenerSample")
+                9 -> runSample("funz.madeby.sampler.samples.ModuleInfoSample")
+                10 -> runSample("funz.madeby.sampler.samples.GdxGeneratedSample")
                 0 -> {running = false
                 println("exiting")
                 }

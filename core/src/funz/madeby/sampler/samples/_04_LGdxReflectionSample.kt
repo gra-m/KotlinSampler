@@ -1,4 +1,4 @@
-package funz.madeby.sampler
+package funz.madeby.sampler.samples
 
 import com.badlogic.gdx.Application
 import com.badlogic.gdx.ApplicationAdapter
