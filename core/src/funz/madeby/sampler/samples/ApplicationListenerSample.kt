@@ -2,12 +2,12 @@
 package funz.madeby.sampler.samples
 
 import com.badlogic.gdx.Application
-import com.badlogic.gdx.ApplicationListener
 import com.badlogic.gdx.Gdx
+import funz.madeby.sampler.common.SampleBase
 import funz.madeby.sampler.utils.logger
 
 
-class ApplicationListenerSample : ApplicationListener {
+class ApplicationListenerSample : SampleBase() {
 
     // Static method, available app wide if private is removed
     companion object {

@@ -2,7 +2,6 @@
 package funz.madeby.sampler.samples
 
 import com.badlogic.gdx.Application
-import com.badlogic.gdx.ApplicationAdapter
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.Input
 import com.badlogic.gdx.graphics.OrthographicCamera
@@ -11,13 +10,14 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.utils.ArrayMap
 import com.badlogic.gdx.utils.viewport.*
+import funz.madeby.sampler.common.SampleBase
 import funz.madeby.sampler.utils.*
 
 /* Viewports controls the strategy for scaling game world to screen.
 Built in Strategies to handle multiple resolutions.
 This example is not v. useful as it is not in the expected JFrame used in the original videos, this is the only one
 that suffers though..*/
-class _06_ViewportSample : ApplicationAdapter(), MyInputProcessor {
+class _06_ViewportSample : SampleBase() {
     companion object {
         @JvmStatic
         private val LOG = logger<_06_ViewportSample>()

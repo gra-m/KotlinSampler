@@ -2,12 +2,12 @@
 package funz.madeby.sampler.samples
 import com.badlogic.gdx.Application
 import com.badlogic.gdx.Application.LOG_DEBUG
-import com.badlogic.gdx.ApplicationAdapter
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.utils.Logger
+import funz.madeby.sampler.common.SampleBase
 
 
-class ModuleInfoSample : ApplicationAdapter() {
+class ModuleInfoSample : SampleBase() {
     companion object {
         @JvmStatic
         private val LOG = Logger(ModuleInfoSample::class.java.simpleName, LOG_DEBUG)
