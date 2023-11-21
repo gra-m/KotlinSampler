@@ -19,9 +19,10 @@ object SampleInfos {
         SampleInfo(_05_OrthographicCameraSample::class.java),
         SampleInfo(_06_ViewportSample::class.java),
         SampleInfo(_07_SpriteBatchSample::class.java),
+        SampleInfo(_08_ShapeRendererSample::class.java),
         SampleInfo(ApplicationListenerSample::class.java),
         SampleInfo(ModuleInfoSample::class.java),
-        SampleInfo(GdxGeneratedSample::class.java),
+        SampleInfo(GdxGeneratedSample::class.java)
     )
 
     // kept as a reminder for K loops
