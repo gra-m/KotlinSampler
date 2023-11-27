@@ -10,7 +10,7 @@ class GdxSampleLauncher {
     val config = Lwjgl3ApplicationConfiguration()
 
     init {
-        config.setWindowSizeLimits(1080, 720, 1080, 720)
+        config.setWindowedMode(1080, 720)
         var count = 0
 
         while(running) {
@@ -18,8 +18,9 @@ class GdxSampleLauncher {
             println(welcome)
             println("\n1.InputPolling\n2.InputListening\n3.InputMultiplexer[press some keys, play with true/false" +
                     "\n4.LGdxReflectionSample[MethodsAndFieldsOfActiveClass\n5.OrthographicCameraSample" +
-                    "\n6.ViewportSample\n7.SpriteBatchSample\n8.ShapeRendererSample\n9.ApplicationListenerSample[CallOrder]" +
-                    "\n10.ModuleInfoSample[The Interfaces used by LibGdx]\n11.GdxSampler\n0.exit")
+                    "\n6.ViewportSample\n7.SpriteBatchSample\n8.ShapeRendererSample\n9.BitmapFontSample" +
+                    "\n10.ApplicationListenerSample[CallOrder]" +
+                    "\n11.ModuleInfoSample[The Interfaces used by LibGdx]\n12.GdxGeneratedSample\n0.exit")
             count++
             val choice:Int =  readLine()!!.toInt()
 
@@ -32,9 +33,10 @@ class GdxSampleLauncher {
                 6 -> runSample("_06_ViewportSample")
                 7 -> runSample("_07_SpriteBatchSample")
                 8 -> runSample("_08_ShapeRendererSample")
-                9 -> runSample("ApplicationListenerSample")
-                10 -> runSample("ModuleInfoSample")
-                11 -> runSample("GdxGeneratedSample")
+                9 -> runSample("_09_BitmapFontSample")
+                10 -> runSample("ApplicationListenerSample")
+                11 -> runSample("ModuleInfoSample")
+                12 -> runSample("GdxGeneratedSample")
                 0 -> {running = false
                 println("exiting")
                 }

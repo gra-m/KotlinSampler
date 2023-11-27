@@ -25,7 +25,7 @@ class _08_ShapeRendererSample : SampleBase() {
     private lateinit var camera: OrthographicCamera
     private lateinit var viewport: Viewport
     private lateinit var renderer: ShapeRenderer
-    private var centerCamera = false
+    private var centerCamera = true
     private  var drawGrid = true
     private  var drawCircles = true
     private  var drawRectangles = true

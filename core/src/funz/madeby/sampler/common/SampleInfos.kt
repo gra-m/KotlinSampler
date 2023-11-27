@@ -11,7 +11,7 @@ import funz.madeby.sampler.samples.*
  */
 object SampleInfos {
 
-    val allSamples = arrayListOf(
+    private val allSamples = arrayListOf(
         SampleInfo(_01_InputPollingSample::class.java),
         SampleInfo(_02_InputListeningSample::class.java),
         SampleInfo(_03_InputMultiplexerSample::class.java),
@@ -20,6 +20,7 @@ object SampleInfos {
         SampleInfo(_06_ViewportSample::class.java),
         SampleInfo(_07_SpriteBatchSample::class.java),
         SampleInfo(_08_ShapeRendererSample::class.java),
+        SampleInfo(_09_BitmapFontSample::class.java),
         SampleInfo(ApplicationListenerSample::class.java),
         SampleInfo(ModuleInfoSample::class.java),
         SampleInfo(GdxGeneratedSample::class.java)
