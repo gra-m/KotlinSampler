@@ -2,5 +2,6 @@
 package funz.madeby.sampler.samples.config
 
 object Config {
-    const val BULLET_ALIVE_MAXIMUM = 0.2f
+    const val BULLET_ALIVE_MAXIMUM = 3f
+    const val SPAWN_BULLET_EVERY =  0.3f
 }
