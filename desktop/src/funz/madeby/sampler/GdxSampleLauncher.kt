@@ -19,8 +19,8 @@ class GdxSampleLauncher {
             println("\n1.InputPolling\n2.InputListening\n3.InputMultiplexer[press some keys, play with true/false" +
                     "\n4.LGdxReflectionSample[MethodsAndFieldsOfActiveClass\n5.OrthographicCameraSample" +
                     "\n6.ViewportSample\n7.SpriteBatchSample\n8.ShapeRendererSample\n9.BitmapFontSample" +
-                    "\n10.ApplicationListenerSample[CallOrder]" +
-                    "\n11.ModuleInfoSample[The Interfaces used by LibGdx]\n12.GdxGeneratedSample\n0.exit")
+                    "\n10.PoolingSample\n11.ApplicationListenerSample[CallOrder]" +
+                    "\n12.ModuleInfoSample[The Interfaces used by LibGdx]\n13.GdxGeneratedSample\n0.exit")
             count++
             val choice:Int =  readLine()!!.toInt()
 
@@ -34,9 +34,10 @@ class GdxSampleLauncher {
                 7 -> runSample("_07_SpriteBatchSample")
                 8 -> runSample("_08_ShapeRendererSample")
                 9 -> runSample("_09_BitmapFontSample")
-                10 -> runSample("ApplicationListenerSample")
-                11 -> runSample("ModuleInfoSample")
-                12 -> runSample("GdxGeneratedSample")
+                10 -> runSample("_10_PoolingSample")
+                11 -> runSample("ApplicationListenerSample")
+                12 -> runSample("ModuleInfoSample")
+                13 -> runSample("GdxGeneratedSample")
                 0 -> {running = false
                 println("exiting")
                 }
