@@ -18,7 +18,8 @@ class _10_PoolingSample: SampleBase() {
     private val bullets = GdxArray<Bullet>()
     private var timer = 0f
 
-    private val bulletPool = object :  Pool<Bullet>(10) {
+    // tops out at around 120 with current settings 0.3f 2f
+    private val bulletPool = object : Pool<Bullet>(120) {
         override fun newObject(): Bullet = Bullet()
 
         override fun free(bullet: Bullet?) {
@@ -31,14 +32,13 @@ class _10_PoolingSample: SampleBase() {
             LOG.debug("Before obtain bullet free = $free")
             val bullet = super.obtain()
             LOG.debug("After obtain bullet free = $free")
-            return  bullet
+            return bullet
         }
 
         override fun reset(bullet: Bullet?) {
             LOG.debug("Resetting object = $bullet")
             super.reset(bullet)
         }
-
 
 
     }
@@ -49,6 +49,26 @@ class _10_PoolingSample: SampleBase() {
     }
 
     override fun render() {
+        val delta = Gdx.graphics.deltaTime
+        timer += delta
+        if (timer >= Config.SPAWN_BULLET_EVERY)
+            bullets.add(bulletPool.obtain())
+        LOG.debug("Array bullets = ${bullets.size}")
+
+        updateBullets(delta)
+    }
+
+    private fun updateBullets(delta: Float) {
+        LOG.debug("Updating bullets")
+        bullets.forEach {
+            it.update(delta)
+            if (!it.alive) {
+                bullets.removeValue(it, true)
+                bulletPool.free(it)
+                LOG.debug("Alive bullets after update = ${bullets.size}")
+            }
+        }
+
     }
 
     override fun dispose() {
@@ -57,23 +77,22 @@ class _10_PoolingSample: SampleBase() {
         bullets.clear()
 
     }
-
-
 }
 
-class Bullet: Poolable {
-    var alive = true
-    var timeAlive = 0f
 
-    fun update(delta: Float) {
-        timeAlive += delta
-        if (timeAlive > Config.BULLET_ALIVE_MAXIMUM )
-            alive = false
+    class Bullet : Poolable {
+        var alive = true
+        var timeAlive = 0f
+
+        fun update(delta: Float) {
+            timeAlive += delta
+            if (timeAlive > Config.BULLET_ALIVE_MAXIMUM)
+                alive = false
+        }
+
+        override fun reset() {
+            alive = true
+            timeAlive = 0f
+        }
+
     }
-
-    override fun reset() {
-        alive = true
-        timeAlive = 0f
-    }
-
-}

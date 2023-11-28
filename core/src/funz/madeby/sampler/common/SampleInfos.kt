@@ -21,6 +21,7 @@ object SampleInfos {
         SampleInfo(_07_SpriteBatchSample::class.java),
         SampleInfo(_08_ShapeRendererSample::class.java),
         SampleInfo(_09_BitmapFontSample::class.java),
+        SampleInfo(_10_PoolingSample::class.java),
         SampleInfo(ApplicationListenerSample::class.java),
         SampleInfo(ModuleInfoSample::class.java),
         SampleInfo(GdxGeneratedSample::class.java)
